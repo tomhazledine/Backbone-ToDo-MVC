@@ -1,23 +1,11 @@
-//------------------------------------//
-
-// * Master SASS file
-// * Architecture uses ITCSS methodology
-
-//------------------------------------//
-
-.touche-de-rouge{color:red;}
-
 // 01. SETTINGS
 @import "settings.colours";
 @import "settings.fonts";
 @import "settings.breakpoints";
 
 // 02. TOOLS
-@import "tools.placeholders";
-@import "tools.mixins";
 
 // 03. GENERIC
-//@import 'generic.normalize';
 @import "generic.reset";
 
 // 04. BASE
@@ -25,9 +13,10 @@
 @import "base.theme";
 
 // 05. OBJECTS
+@import "objects.generic";
 
 // 06. COMPONENTS
+@import "components.header";
 
 // 07. TRUMPS
 @import "trumps.utilities";
-@import "trumps.tests";

@@ -7,5 +7,5 @@
   // "max-width" breakpoints (screens getting smaller)
   @else if $point == d1   { @media (max-width:960px)  { @content; } }
   @else if $point == d2   { @media (max-width:750px)  { @content; } }
-  @else if $point == d3   { @media (max-width:400px)  { @content; } }
+  @else if $point == d3   { @media (max-width:460px)  { @content; } }
 }

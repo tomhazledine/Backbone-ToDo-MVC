@@ -34,9 +34,18 @@
 }
 
 // Clearfix
-.clearfix{
-  @extend %cf;
+.clearfix:before,
+.clearfix:after,
+.cf:before,
+.cf:after{
+  content:' ';
+  display:table;
 }
+.clearfix:after,
+.cf:after{clear:both;}
+// For IE 6/7 only – Include this rule to trigger hasLayout and contain floats.
+.clearfix,
+.cf{zoom:1;}
 //.clearfix:before,
 //.clearfix:after{
 //  content:' ';
