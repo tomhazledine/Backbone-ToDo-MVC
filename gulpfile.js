@@ -31,7 +31,19 @@ gulp.task('sass', function() {
 
 // Concatenate & Minify JS
 gulp.task('js', function() {
-    return gulp.src(['uncompressed/js/jquery/jquery.js', 'uncompressed/js/vendor/*.js', 'uncompressed/js/custom/*.js'])
+    return gulp.src([
+        'uncompressed/js/jquery/jquery.js',
+        'uncompressed/js/vendor/underscore.js',
+        'uncompressed/js/vendor/backbone.js',
+        'uncompressed/js/vendor/backbone.localstorage.js',
+        'uncompressed/js/custom/models.*.js',
+        'uncompressed/js/custom/collections.*.js',
+        'uncompressed/js/custom/views.*.js',
+        'uncompressed/js/custom/app.js'//,
+        // 'uncompressed/js/custom/router.*.js'
+
+        // 'uncompressed/js/custom/*.js'
+    ])
     .pipe( plumber({
         errorHandler: onError
     }) )
@@ -44,7 +56,7 @@ gulp.task('js', function() {
 
 // Lets lint our JS
 gulp.task('js-lint', function() {
-    return gulp.src('uncompressed/js/*.js')
+    return gulp.src('uncompressed/js/custom/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
@@ -58,9 +70,9 @@ gulp.task( 'scss-lint', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
 
-    gulp.watch('uncompressed/js/*.js', ['js']);
+    gulp.watch('uncompressed/js/**/*.js', ['js']);
     gulp.watch('uncompressed/scss/*.scss', ['sass']);
-    gutil.log('Watching source files for changes... Press ' + gutil.colors.cyan('CTRL + C') + ' to stop.');
+    gutil.log('Press ' + gutil.colors.cyan('CTRL + C') + ' to stop.');
 
 });
 

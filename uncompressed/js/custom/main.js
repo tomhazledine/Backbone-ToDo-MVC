@@ -1,1 +1,1 @@
-console.log('scripts are still working');
+console.log('scripts are working');
