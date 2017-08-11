@@ -174,6 +174,11 @@ label[for='toggle-all'] {
 	display: none;
 }
 
+.todo-list li .view.is-highlighted {
+	background:#ffdc00;
+}
+
+.todo-list li .highlight,
 .todo-list li .toggle {
 	text-align: center;
 	width: 40px;
@@ -187,7 +192,11 @@ label[for='toggle-all'] {
 	-webkit-appearance: none;
 	appearance: none;
 }
+.todo-list li .highlight{
+	left:40px;
+}
 
+.todo-list li .highlight:after,
 .todo-list li .toggle:after {
 	content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
 }
@@ -196,11 +205,15 @@ label[for='toggle-all'] {
 	content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
 }
 
+.todo-list li .highlight:checked:after {
+	content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ff851b" stroke-width="3"/><path fill="#ff851b" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+
 .todo-list li label {
 	white-space: pre-line;
 	word-break: break-all;
 	padding: 15px 60px 15px 15px;
-	margin-left: 45px;
+	margin-left: 85px;
 	display: block;
 	line-height: 1.2;
 	transition: color 0.4s;
@@ -354,7 +367,8 @@ html .clear-completed:active {
 	.todo-list li .toggle {
 		background: none;
 	}
-
+	
+	.todo-list li .highlight,
 	.todo-list li .toggle {
 		height: 40px;
 	}
