@@ -175,7 +175,7 @@ label[for='toggle-all'] {
 }
 
 .todo-list li .view.is-highlighted {
-	background:#ffdc00;
+	background:#ffffd0;
 }
 
 .todo-list li .highlight,
