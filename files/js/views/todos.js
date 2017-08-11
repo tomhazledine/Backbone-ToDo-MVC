@@ -58,13 +58,11 @@ app.TodoView = Backbone.View.extend({
 
     // Toggle the `"completed"` state of the model.
     toggleCompleted: function() {
-        console.log('toggling!');
         this.model.toggle();
     },
 
     // Toggle the `"completed"` state of the model.
     highlightCompleted: function() {
-        console.log('highlight!');
         this.model.highlight();
     },
 
